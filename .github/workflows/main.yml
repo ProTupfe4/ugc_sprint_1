@@ -27,6 +27,7 @@ jobs:
          with:
            name: reports
            path: flake-report/*.html
+           retention-days: 5
           
            
        
