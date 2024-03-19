@@ -1,8 +1,10 @@
 name: CI Workflow
+
 on:
   pull_request:
     branches:
       - main
+      
 jobs:
   linter:
     name: Проверка качества кода
@@ -22,12 +24,6 @@ jobs:
            pip install flake8 flake8-html wemake-python-styleguide==0.15.3 flake8-bandit bandit
        - name:  Установка зависимостей
          run: flake8 --format=html --htmldir=flake-report
-       - name: Визуализация результата
-       - uses: actions/upload-artifacts@v4
-         with:
-           name: reports
-           path: flake-report/*.html
-           retention-days: 5
           
            
        
